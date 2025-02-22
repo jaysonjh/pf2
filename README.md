@@ -50,3 +50,9 @@ DRAWLINE(顶底=+9,H,顶底=-9,L,0), DOTLINE,LINETHICK1,COLORYELLOW;
 
 ![输入图片说明](https://foruda.gitee.com/images/1740223864137426611/caa93000_11322109.png "屏幕截图")
 ![输入图片说明](https://foruda.gitee.com/images/1740224005678728817/ce9dc5c8_11322109.png "屏幕截图")
+
+### 交流
+微信号 dukechen2010 
+QQ号   47835265 
+加友请备注来自：gitee
+
