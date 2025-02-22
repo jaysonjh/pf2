@@ -33,6 +33,12 @@
         }
     ]
 }
+#### 通达信中使用
+![输入图片说明](image.png)
+
+顶底:=TDXDLL1(1,0,H,L);
+DRAWLINE(顶底=-9,L,顶底=+9,H,0), DOTLINE,LINETHICK1,COLORYELLOW;
+DRAWLINE(顶底=+9,H,顶底=-9,L,0), DOTLINE,LINETHICK1,COLORYELLOW;
 
 #### 特色
 
