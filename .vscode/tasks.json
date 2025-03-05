@@ -20,6 +20,21 @@
                 "reveal": "silent"
             },
             "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "build&Detail",
+            "type": "shell",
+            "command": "msbuild FoxFunc.vcxproj /t:rebuild > build.txt",
+            "args": [
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "presentation": {
+                "reveal": "silent"
+            },
+            "problemMatcher": "$msCompile"
         }
     ]
 }
