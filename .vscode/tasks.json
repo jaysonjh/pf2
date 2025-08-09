@@ -8,7 +8,7 @@
             "type": "shell",
             "command": "msbuild",
             "args": [
-                "FoxFunc.vcxproj",
+                "pf3v.vcxproj",
                 "/p:Configuration=Debug",
                 "/p:Platform=Win32"
             ],
@@ -26,7 +26,7 @@
             "type": "shell",
             "command": "msbuild",
             "args": [
-                "FoxFunc.vcxproj",
+                "pf3v.vcxproj",
                 "/p:Configuration=Debug",
                 "/p:Platform=x64"
             ],
@@ -39,7 +39,7 @@
         {
             "label": "build&Detail",
             "type": "shell",
-            "command": "msbuild FoxFunc.vcxproj /t:rebuild > build.txt",
+            "command": "msbuild pf3v.vcxproj /t:rebuild > build.txt",
             "args": [
             ],
             "group": {
@@ -51,7 +51,7 @@
         {
             "label": "clean",
             "type": "shell",
-            "command": "msbuild FoxFunc.vcxproj /t:clean",
+            "command": "msbuild pf3v.vcxproj /t:clean",
             "args": [
             ],
             "group": {
