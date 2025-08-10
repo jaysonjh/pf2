@@ -16,9 +16,6 @@
                 "kind": "build",
                 "isDefault": true
             },
-            // "presentation": {
-            //     "reveal": "silent"
-            // },
             "problemMatcher": "$msCompile"
         },
         {
@@ -40,8 +37,7 @@
             "label": "build&Detail",
             "type": "shell",
             "command": "msbuild pf3v.vcxproj /t:rebuild > build.txt",
-            "args": [
-            ],
+            "args": [],
             "group": {
                 "kind": "build",
                 "isDefault": false
@@ -52,11 +48,26 @@
             "label": "clean",
             "type": "shell",
             "command": "msbuild pf3v.vcxproj /t:clean",
-            "args": [
-            ],
+            "args": [],
             "group": {
                 "kind": "build",
                 "isDefault": false
+            }
+        },
+        {
+            "label": "copy-output",
+            "type": "shell",
+            "command": "copy",
+            "args": [
+                "${workspaceFolder}\\Debug\\pf3_32.dll",
+                "D:\\new_zsqht\\T0002\\dlls",
+                "/y"
+            ],
+            "dependsOn": "build",
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
             }
         }
     ]
