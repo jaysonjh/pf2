@@ -50,6 +50,5 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
-/FoxFunc
-dll_log.txt
 /pf3v
+/Debug
