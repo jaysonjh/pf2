@@ -55,7 +55,7 @@
             }
         },
         {
-            "label": "copy-output",
+            "label": "编译到通达信期货",
             "type": "shell",
             "command": "copy",
             "args": [
