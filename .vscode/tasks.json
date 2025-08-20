@@ -16,6 +16,7 @@
                 "kind": "build",
                 "isDefault": true
             },
+            "dependsOn": "删除运行日志",
             "problemMatcher": "$msCompile"
         },
         {
@@ -69,6 +70,20 @@
                 "kind": "build",
                 "isDefault": true
             }
+        },
+        {
+            "label": "删除运行日志",
+            "type": "shell",
+            "command": "del",
+            "args": [
+                "/f",
+                 "${workspaceFolder}\\Debug\\dll_log.txt"
+            ],
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+            }
         }
+
     ]
 }
