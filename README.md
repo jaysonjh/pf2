@@ -53,7 +53,7 @@ DRAWLINE(顶底=+9,H,顶底=-9,L,0), DOTLINE,LINETHICK1,COLORYELLOW;
 K线信号分类：  笔顶、笔底、废笔顶、废笔底、K、笔顶分、笔底分、笔破坏、段顶分、段底分、废段顶、废段底、段破坏、顶分破坏、底分破坏、废除段信号、废除顶信号
 ### 样例图
 
-![输入图片说明](https://foruda.gitee.com/images/1740223864137426611/caa93000_11322109.png "屏幕截图")
+![输入图片说明](image.png)
 ![输入图片说明](https://foruda.gitee.com/images/1740224005678728817/ce9dc5c8_11322109.png "屏幕截图")
 
 ### 交流
