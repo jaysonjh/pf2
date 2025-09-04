@@ -1,1 +1,3 @@
 markBadFx,0
+BI,0
+DUAN,0
