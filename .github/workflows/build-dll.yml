@@ -1,13 +1,17 @@
-name: Build pf3_32 DLL
+name: Build pf3 DLL
 
 on:
   push:
-    branches: [ main ]   # 如果你用 master，这里改成 master
-  workflow_dispatch:      # 手动触发也可以
+    branches: [ main, master ]
+  pull_request:
 
 jobs:
   build:
     runs-on: windows-latest
+
+    strategy:
+      matrix:
+        platform: [Win32, x64]
 
     steps:
       - name: Checkout
@@ -16,11 +20,14 @@ jobs:
       - name: Setup MSBuild
         uses: microsoft/setup-msbuild@v2
 
-      - name: Build pf3_32 (Win32 Release)
-        run: msbuild pf3v.vcxproj /p:Configuration=Release /p:Platform=Win32 /p:OutDir=build\\
+      - name: Build pf3v.vcxproj
+        run: msbuild pf3v.vcxproj /p:Configuration=Debug /p:Platform=${{ matrix.platform }}
 
       - name: Upload DLL artifact
         uses: actions/upload-artifact@v4
         with:
-          name: pf3_32
-          path: build\pf3_32.dll
+          name: pf3_${{ matrix.platform }}_Debug
+          path: |
+            Debug\pf3_32.dll
+            Debug\pf3_64.dll
+          if-no-files-found: ignore
