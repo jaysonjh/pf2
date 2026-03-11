@@ -24,11 +24,16 @@ jobs:
       - name: Build pf3v.vcxproj
         run: msbuild pf3v.vcxproj /p:Configuration=Debug /p:Platform=${{ matrix.platform }}
 
-      - name: Upload DLL artifact
+      - name: Upload Win32 DLL
+        if: matrix.platform == 'Win32'
         uses: actions/upload-artifact@v4
         with:
-          name: pf3_${{ matrix.platform }}_Debug
-          path: |
-            Debug\pf3_32.dll
-            Debug\pf3_64.dll
-          if-no-files-found: ignore
+          name: pf3_32_Debug
+          path: Debug\pf3_32.dll
+
+      - name: Upload x64 DLL
+        if: matrix.platform == 'x64'
+        uses: actions/upload-artifact@v4
+        with:
+          name: pf3_64_Debug
+          path: x64\Debug\pf3_64.dll
