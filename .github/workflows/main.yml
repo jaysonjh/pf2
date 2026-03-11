@@ -1,0 +1,33 @@
+name: Build pf3 DLL
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    strategy:
+      matrix:
+        platform: [Win32, x64]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v2
+
+      - name: Build pf3v.vcxproj
+        run: msbuild pf3v.vcxproj /p:Configuration=Debug /p:Platform=${{ matrix.platform }}
+
+      - name: Upload DLL artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: pf3_${{ matrix.platform }}_Debug
+          path: |
+            Debug\pf3_32.dll
+            Debug\pf3_64.dll
+          if-no-files-found: ignore
